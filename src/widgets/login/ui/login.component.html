@@ -1,0 +1,13 @@
+<div class="login-wrapper">
+    <div class="login-wrapper__header">
+        <h3 class="auth-title">Вход</h3>
+        <app-button [routerLink]="'/register'">Регистрация</app-button>
+    </div>
+    <div>
+        <app-input-form [title]="'E-mail'"></app-input-form>
+        <app-input-password [title]="'Пароль'"></app-input-password>
+        <div class="login-wrapper__btn_position">
+            <app-button>Войти</app-button>
+        </div>
+    </div>
+</div>

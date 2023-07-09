@@ -1,0 +1,27 @@
+.input-form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .input-form__title {
+        width: 20%;
+    }
+
+    .input-form__wrapper {
+        width: 60%;
+
+        input, select {
+            font-size: 16px;
+            color: var(--text-input-color);
+        }
+    }
+}
+
+.auth-title {
+    color: var(--color-title-auth);
+    letter-spacing: 4.5px;
+    font-size: 24px;
+    font-family: 700;
+}

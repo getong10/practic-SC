@@ -1,0 +1,15 @@
+.users-filters {
+    width: 100%;
+    display: flex;
+    margin-bottom: 60px;
+
+    .users-filters__sort-wrapper {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+
+        label {
+            margin-right: 10px;
+        }
+    }
+}

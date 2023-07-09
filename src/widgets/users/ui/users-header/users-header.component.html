@@ -1,0 +1,22 @@
+<div class="users-header">
+    <div class="users-header__search-input-wrapper">
+        <app-input class="users-header__search-input" [isSearch]="isSearch" [placeholder]="'Поиск по ФИО, городу, школе, классу'">
+        </app-input>
+        <svg-icon
+            src="assets/reset-icon.svg"
+            class="users-header__reset-icon"
+        >
+        </svg-icon>
+        <app-button class="users-header__btn" [isSearchBtn]="isSearchBtn">
+            <svg-icon
+                src="assets/search-icon.svg"
+            >
+            </svg-icon>
+        </app-button>
+    </div>
+    <app-button (click)="showModal()">Создать пользователя</app-button>
+</div>
+
+<app-modal *ngIf="viewModal">
+    <app-users-edit (onChanged)="closeModal()" [title]="'Создание пользователя'" [textBtn]="'Создать'"></app-users-edit>
+</app-modal>

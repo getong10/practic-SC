@@ -1,0 +1,28 @@
+.users-child {
+    margin: 0px auto 10px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px 30px 20px 30px;
+    border-radius: 16px;
+    background-color: var(--color-bg-user-child);
+}
+
+.users-child__work-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.users-child__personal-info {
+    display: flex;
+    margin-bottom: 15px;
+
+    div {
+        margin-right: 10px;
+        background-color: var((--color-btn));
+        color: var(--color-white);
+        padding: 4px 8px;
+        font-size: 9px;
+        border-radius: 12px;
+    }
+}

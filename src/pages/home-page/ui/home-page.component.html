@@ -1,0 +1,72 @@
+<div>
+    <app-navbar></app-navbar>
+    <div class="home-main">
+        <app-sidebar *ngIf="activeSidebar" (onChangeSidebar)="toggleMenu($event)" class="home-main__menu-btn"></app-sidebar>
+        <div *ngIf="!activeSidebar" class="home-main__menu-btn">
+            <app-button [isMenuBtn]="isMenuBtn" (click)="toggleMenu(true)">
+                <svg-icon
+                    src="assets/menu.svg"
+                >
+                </svg-icon>
+            </app-button>
+            <span>Меню</span>
+        </div>
+        <div class="home-main__content">
+            <div class="home-main__main-btn-wrapper">
+                <app-button [routerLink]="'/login'" class="home-main__main-btn_margin">Войти</app-button>
+                <app-button [routerLink]="'/register'" [setBackgroundColor]="'#7feb4d'">Регистрация</app-button>
+            </div>
+            <div>
+                <h3 class="home-main__speed-tourneys-title">Ближайшие турниры</h3>
+                <div class="home-main__speed-tourneys">
+                    <div class="home-main__speed-tourney">
+                        <div>Дата: <span>24.02.2023</span></div>
+                        <div>Тип турнира: <span>Групповой этап</span></div>
+                        <div>Кто может участвовать: <span>Ярославль, Самара, Тольятти, Москва</span></div>
+                        <div>Количество участников: <span>23</span></div>
+                    </div>
+                    <div class="home-main__speed-tourney">
+                        <div>Дата: <span>24.02.2023</span></div>
+                        <div>Тип турнира: <span>Групповой этап</span></div>
+                        <div>Кто может участвовать: <span>Ярославль, Самара, Тольятти, Москва</span></div>
+                        <div>Количество участников: <span>23</span></div>
+                    </div>
+                    <div class="home-main__speed-tourney">
+                        <div>Дата: <span>24.02.2023</span></div>
+                        <div>Тип турнира: <span>Групповой этап</span></div>
+                        <div>Кто может участвовать: <span>Ярославль, Самара, Тольятти, Москва</span></div>
+                        <div>Количество участников: <span>23</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-main__tourney-wrapper">
+                <h1>Открытые соревнования среди школьников</h1>
+                <div class="home-main__tourney">
+                    <span class="home-main__tourney-total">
+                        85
+                    </span>
+                    <div class="home-main__tourney-description">
+                        <span>Завершенных</span>
+                        <div class="home-main__tourney-detailed">
+                            <span>Результаты</span>
+                            <svg-icon src="assets/home-line.svg"></svg-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-main__tourney">
+                    <span class="home-main__tourney-total">
+                        85
+                    </span>
+                    <div class="home-main__tourney-description">
+                        <span>Предстоящих</span>
+                        <div class="home-main__tourney-detailed">
+                            <span>Просмотр</span>
+                            <svg-icon src="assets/home-line.svg"></svg-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h3>{{title}}</h3>
+    <svg-icon
+        class="modal-close"
+        (click)="changed()"
+        [src]="'assets/reset-icon.svg'"
+    >
+    </svg-icon>
+</div>
+<div class="modal-form">
+    <app-input-form [title]="'Фамилия'"></app-input-form>
+    <app-input-form [title]="'Имя'"></app-input-form>
+    <app-input-form [title]="'Отчество'"></app-input-form>
+    <app-input-form [title]="'E-mail'" [placeholder]="'primer@email.ru'"></app-input-form>
+    <app-select-form [title]="'Город'"></app-select-form>
+    <app-select-form [title]="'Школа'"></app-select-form>
+    <app-select-form [title]="'Класс'"></app-select-form>
+    <app-input-password [title]="'Пароль'"></app-input-password>
+    <app-input-password [title]="'Подтвердите пароль'"></app-input-password>
+</div>
+<div class="modal-line"></div>
+<app-button>{{textBtn}}</app-button>

@@ -1,0 +1,10 @@
+select {
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--input-bg-color);
+    height: 35px;
+    width: 100%;
+    padding-left: 10px;
+}

@@ -1,0 +1,33 @@
+button {
+    color: var(--color-white);
+    background-color: var(--color-btn);
+    border-radius: 14px;
+    border: none;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.menu-btn {
+    border: none;
+    margin: 20px 0 0 30px;
+    width: 0;
+    height: 0;
+    padding: 0;
+}
+
+.search-btn {
+    border-radius: 6px;
+    background-color: var(--input-bg-color);
+}
+
+.margin-position {
+    margin-right: 20px;
+}
+
+.sidebar-btn {
+    padding: 15px 30px;
+    background-color: var(--color-bg-user-child);
+    border-radius: 30px;
+}

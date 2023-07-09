@@ -1,0 +1,27 @@
+<div class="users-wrapper">
+    <app-users-header></app-users-header>
+    <app-users-filters></app-users-filters>
+    <app-users-child (onChanged)="showModal($event)"></app-users-child>
+    <app-users-child (onChanged)="showModal($event)"></app-users-child>
+</div>
+
+<app-modal *ngIf="!!viewModal" [ngSwitch]="viewModal">
+    <ng-container *ngSwitchCase="3">
+        <h3>Подтвердить удаление?</h3>
+        <div class="modal__btn-wrapper">
+            <app-button>да</app-button>
+            <app-button (click)="showModal(0)">нет</app-button>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="2">
+        <h3>Подтвердить блокировку?</h3>
+        <textarea placeholder="Укажите причину блокировки" cols="20" rows="10"></textarea>
+        <div class="modal__btn-wrapper">
+            <app-button>да</app-button>
+            <app-button (click)="showModal(0)">нет</app-button>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="1">
+        <app-users-edit (onChanged)="closeModal()" [title]="'Редактирование пользователя'" [textBtn]="'Редактировать'"></app-users-edit>
+    </ng-container>
+</app-modal>

@@ -1,0 +1,44 @@
+<div class="register-wrapper">
+    <div class="register-content">
+        <div>
+            <h3 class="auth-title">Регистрация</h3>
+            <div class="register-wrapper__btns-role">
+                <app-button class="register-wrapper__btn-margin" [setBackgroundColor]="'#33FF99'">Я ученик</app-button>
+                <app-button [setBackgroundColor]="'#FF0066'">Я учитель</app-button>
+            </div>
+        </div>
+        <app-input-form [title]="'Фамилия'"></app-input-form>
+        <app-input-form [title]="'Имя'"></app-input-form>
+        <app-input-form [title]="'Отчество'"></app-input-form>
+        <app-input-form [title]="'E-mail'" [placeholder]="'primer@email.ru'"></app-input-form>
+        <app-select-form [title]="'Город'" [items]="cities"></app-select-form>
+        <app-select-form [title]="'Школа'" [items]="schools"></app-select-form>
+        <app-select-form [title]="'Класс'" [items]="classSchools"></app-select-form>
+        <app-input-password [title]="'Пароль'"></app-input-password>
+        <app-input-password [title]="'Подтвердите пароль'"></app-input-password>
+        <div class="register-wrapper__new-info-wrapper">
+            <div class="register-wrapper__new-info">
+                <div class="register-wrapper__line"></div>
+                <div class="register-wrapper__wrapper-checkbox">
+                    <app-input class="register-wrapper__checkbox-info" [type]="'checkbox'" [id]="'info-input'"></app-input>
+                    <label for="info-input" class="register-wrapper__text-info">Я хочу получать новости о соревнованиях на телефон</label>
+                </div>
+            </div>
+            <div>
+                <app-button class="register-wrapper__btn-margin" [setBackgroundColor]="'#585858'">Обратиться в тех. поддержку</app-button>
+                <app-button>Зарегистрироваться</app-button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-modal>
+    <h3 class="register-title">Спасибо за заявку!</h3>
+    <div class="modal-description">
+        В ближайшее время заявка будет рассмотрена администратором.
+    </div>
+    <div class="modal-description">
+        После одобрения вы получите письмо на вашу эл.почту с приглашением на портал.
+    </div>
+    <app-button>ОК</app-button>
+</app-modal> -->

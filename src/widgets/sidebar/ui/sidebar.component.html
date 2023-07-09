@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <ul class="sidebar__menu">
+        <li class="sidebar__item" [routerLink]="'/home'">Главная</li>
+        <li class="sidebar__item" [routerLink]="'/tourneys'">Турниры</li>
+        <li class="sidebar__item" [routerLink]="'/users'">Пользователи</li>
+    </ul>
+    <app-button class="sidebar__btn" [sidebarBtn]="sidebarBtn" (click)="toggleMenu(false)">
+        <svg-icon src="assets/menu-arrow.svg"></svg-icon>
+    </app-button>
+</div>

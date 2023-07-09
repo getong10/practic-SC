@@ -1,0 +1,14 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'components/input-form.scss';
+@import 'components/auth.scss';
+@import 'components/modal.scss';
+
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+

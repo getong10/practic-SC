@@ -1,0 +1,29 @@
+.users-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .users-header__search-input-wrapper {
+        display: flex;
+        position: relative;
+        width: 100%;
+        max-width: 530px;
+
+        .users-header__search-input {
+            width: 100%;
+        }
+
+        .users-header__reset-icon {
+            position: absolute;
+            top: 18px;
+            right: 60px;
+            cursor: pointer;
+        }
+    }
+}

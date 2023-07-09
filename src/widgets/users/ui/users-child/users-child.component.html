@@ -1,0 +1,17 @@
+<div class="users-child">
+    <div class="users-child__work-info">
+        <h3>Смирнов Матвей Николаевич</h3>
+        <app-select [items]="items"></app-select>
+        <app-select [items]="items"></app-select>
+    </div>
+    <div class="users-child__personal-info">
+        <div>Ярославль</div>
+        <div>Школа №6</div>
+        <div>11б</div>
+    </div>
+    <div class="users-child__edit-btns">
+        <app-button (click)="changed(1)" [setBackgroundColor]="'#2DD700'" [setMargin]="setMargin">Редактировать</app-button>
+        <app-button (click)="changed(2)" [setBackgroundColor]="'#585858'" [setMargin]="setMargin">Заблокировать</app-button>
+        <app-button (click)="changed(3)" [setBackgroundColor]="'#A60000'">Удалить</app-button>
+    </div>
+</div>
