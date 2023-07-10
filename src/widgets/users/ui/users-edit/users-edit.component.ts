@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
 
 @Component({
     selector: 'app-users-edit',
@@ -10,7 +10,7 @@ export class UsersEditComponent {
     @Input() textBtn!: string;
     @Output() onChanged: EventEmitter<void> = new EventEmitter();
 
-    changed() {
+    closeModal() {
         this.onChanged.emit();
     }
 }

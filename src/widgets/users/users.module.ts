@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 
 import { ModalModule } from "src/shared/modal/modal.module";
 import { ButtonModule } from "src/shared/button/button.module";
@@ -21,6 +22,7 @@ import { UsersComponent } from "./ui/users.component";
         ModalModule,
         ButtonModule,
         CommonModule,
+        HttpClientModule,
     ],
 })
 export class UsersModule {}

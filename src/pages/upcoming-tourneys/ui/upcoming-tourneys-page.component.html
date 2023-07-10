@@ -1,0 +1,8 @@
+<div class="upcoming-tourneys">
+    <div class="upcoming-tourneys__content" *ngFor="let tourney of upcomingTourneys">
+        <div>Дата: <span>{{tourney.data}}</span></div>
+        <div>Тип турнира: <span>{{tourney.typeTourney}}</span></div>
+        <div>Кто может участвовать: <span>{{tourney.participants.join(', ')}}</span></div>
+        <div>Количество участников: <span>{{tourney.countParticipants}}</span></div>
+    </div>
+</div>

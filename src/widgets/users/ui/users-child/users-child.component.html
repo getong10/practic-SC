@@ -1,13 +1,13 @@
 <div class="users-child">
     <div class="users-child__work-info">
-        <h3>Смирнов Матвей Николаевич</h3>
-        <app-select [items]="items"></app-select>
-        <app-select [items]="items"></app-select>
+        <h3>{{userData.name}}</h3>
+        <app-select [items]="userData.endTourneys"></app-select>
+        <app-select [items]="userData.startTourneys"></app-select>
     </div>
     <div class="users-child__personal-info">
-        <div>Ярославль</div>
-        <div>Школа №6</div>
-        <div>11б</div>
+        <div>{{userData.title.city}}</div>
+        <div>{{userData.title.school}}</div>
+        <div>{{userData.title.classroom}}</div>
     </div>
     <div class="users-child__edit-btns">
         <app-button (click)="changed(1)" [setBackgroundColor]="'#2DD700'" [setMargin]="setMargin">Редактировать</app-button>

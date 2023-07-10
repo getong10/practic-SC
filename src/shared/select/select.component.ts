@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 export interface SelectProps {
     name: string;
@@ -12,4 +12,14 @@ export interface SelectProps {
 })
 export class SelectComponent {
     @Input() items: SelectProps[] = [];
+    @Input() disabled = false;
+    @Input() name!: string;
+    @Output() myEvent = new EventEmitter<any>();
+
+    handleChange(event: any) {
+        this.myEvent.emit({
+            name: event.target.name,
+            value: event.target.value,
+        });
+    }
 }

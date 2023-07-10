@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { AngularSvgIconModule } from "angular-svg-icon";
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { ButtonModule } from "src/shared/button/button.module";
 import { InputFormModule } from "src/features/input-form/input-form.module";
@@ -19,6 +20,7 @@ import { UsersEditComponent } from "./users-edit.component";
         InputPasswordModule, 
         InputFormModule,
         ButtonModule,
+        ReactiveFormsModule,
     ],
 })
 export class UsersEditModule {}

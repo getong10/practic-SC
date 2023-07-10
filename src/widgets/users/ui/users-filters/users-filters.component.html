@@ -1,9 +1,9 @@
 <div class="users-filters">
     <div class="users-filters__sort-wrapper">
         <label for="sortBy">Сортировка по:</label>
-        <app-select formControlName="sort" name="" id="sortBy">
+        <app-select [items]="filters" formControlName="sort" name="" id="sortBy">
         </app-select>
     </div>
-    <app-select name="" id="" formControlName="tourneyFilter">
+    <app-select [items]="filterTourneys" name="" id="" formControlName="tourneyFilter">
     </app-select>
 </div>

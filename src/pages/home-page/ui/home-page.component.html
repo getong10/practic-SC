@@ -19,23 +19,11 @@
             <div>
                 <h3 class="home-main__speed-tourneys-title">Ближайшие турниры</h3>
                 <div class="home-main__speed-tourneys">
-                    <div class="home-main__speed-tourney">
-                        <div>Дата: <span>24.02.2023</span></div>
-                        <div>Тип турнира: <span>Групповой этап</span></div>
-                        <div>Кто может участвовать: <span>Ярославль, Самара, Тольятти, Москва</span></div>
-                        <div>Количество участников: <span>23</span></div>
-                    </div>
-                    <div class="home-main__speed-tourney">
-                        <div>Дата: <span>24.02.2023</span></div>
-                        <div>Тип турнира: <span>Групповой этап</span></div>
-                        <div>Кто может участвовать: <span>Ярославль, Самара, Тольятти, Москва</span></div>
-                        <div>Количество участников: <span>23</span></div>
-                    </div>
-                    <div class="home-main__speed-tourney">
-                        <div>Дата: <span>24.02.2023</span></div>
-                        <div>Тип турнира: <span>Групповой этап</span></div>
-                        <div>Кто может участвовать: <span>Ярославль, Самара, Тольятти, Москва</span></div>
-                        <div>Количество участников: <span>23</span></div>
+                    <div class="home-main__speed-tourney" *ngFor="let tourney of homeDataResult.upcomingTourneysArr.slice(0, 3)">
+                        <div>Дата: <span>{{tourney.data}}</span></div>
+                        <div>Тип турнира: <span>{{tourney.typeTourney}}</span></div>
+                        <div>Кто может участвовать: <span>{{tourney.participants.join(', ')}}</span></div>
+                        <div>Количество участников: <span>{{tourney.countParticipants}}</span></div>
                     </div>
                 </div>
             </div>
@@ -43,7 +31,7 @@
                 <h1>Открытые соревнования среди школьников</h1>
                 <div class="home-main__tourney">
                     <span class="home-main__tourney-total">
-                        85
+                        {{homeDataResult.completedTourney}}
                     </span>
                     <div class="home-main__tourney-description">
                         <span>Завершенных</span>
@@ -53,9 +41,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="home-main__tourney">
+                <div class="home-main__tourney" [routerLink]="'/upcoming'">
                     <span class="home-main__tourney-total">
-                        85
+                        {{homeDataResult.upcomingTourney}}
                     </span>
                     <div class="home-main__tourney-description">
                         <span>Предстоящих</span>

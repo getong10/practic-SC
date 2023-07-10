@@ -1,11 +1,10 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SidebarModule } from "src/widgets/sidebar/sidebar.module";
-import { HomeRoutingModule } from "./home-routing.module";
+import { HomeRoutingModule } from "./home-routing-page.module";
 import { ButtonModule } from "src/shared/button/button.module";
 import { NavbarModule } from "src/widgets/navbar/navbar.module";
 

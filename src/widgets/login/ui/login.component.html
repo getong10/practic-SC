@@ -4,10 +4,10 @@
         <app-button [routerLink]="'/register'">Регистрация</app-button>
     </div>
     <div>
-        <app-input-form [title]="'E-mail'"></app-input-form>
-        <app-input-password [title]="'Пароль'"></app-input-password>
+        <app-input-form [name]="'email'" (myEvent)="handleEvent($event)" [value]="loginBody.email" [title]="'E-mail'"></app-input-form>
+        <app-input-password [name]="'password'" (myEvent)="handleEvent($event)" [value]="loginBody.password" [title]="'Пароль'"></app-input-password>
         <div class="login-wrapper__btn_position">
-            <app-button>Войти</app-button>
+            <app-button (click)="sendLogin()">Войти</app-button>
         </div>
     </div>
 </div>

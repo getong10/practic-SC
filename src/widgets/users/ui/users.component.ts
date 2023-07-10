@@ -1,11 +1,21 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+
+import { IUsersData } from "../types/users";
+import { UsersService } from "../services/users.service";
 
 @Component({
     selector: 'app-users',
     templateUrl: './users.component.html',
     styleUrls: ['./users.component.scss'],
+    providers: [UsersService],
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
+    constructor(private usersService: UsersService) {}
+
+    usersData: IUsersData = {
+        filterTourneys: [],
+        users: [],
+    };
     viewModal = 0;
 
     showModal(count: number) {
@@ -14,5 +24,12 @@ export class UsersComponent {
 
     closeModal() {
         this.viewModal = 0;
+    }
+
+    ngOnInit(): void {
+        this.usersService.getUsersData().subscribe(response => {
+            this.usersData = response;
+            this.usersData.filterTourneys = [{ name: 'Фильтрация по турнирам', value: '' }].concat(this.usersData.filterTourneys);
+        })
     }
 }

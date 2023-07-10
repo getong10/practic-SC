@@ -1,8 +1,9 @@
 <div class="users-wrapper">
     <app-users-header></app-users-header>
-    <app-users-filters></app-users-filters>
-    <app-users-child (onChanged)="showModal($event)"></app-users-child>
-    <app-users-child (onChanged)="showModal($event)"></app-users-child>
+    <app-users-filters [filterTourneys]="usersData.filterTourneys"></app-users-filters>
+    <ng-container *ngFor="let user of usersData.users">
+        <app-users-child [userData]="user" (onChanged)="showModal($event)"></app-users-child>
+    </ng-container>
 </div>
 
 <app-modal *ngIf="!!viewModal" [ngSwitch]="viewModal">

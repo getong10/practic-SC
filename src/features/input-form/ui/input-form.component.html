@@ -1,7 +1,15 @@
 <div class="input-form">
     <label class="input-form__title" for="">{{title}}</label>
     <div class="input-form__wrapper">
-        <app-input class="input-form__comp" [placeholder]="placeholder"></app-input>
+        <app-input 
+            [name]="name" 
+            (myEvent)="passEvent($event)" 
+            class="input-form__comp" 
+            [value]="value" 
+            [placeholder]="placeholder"
+            [disabled]="disabled"
+        >
+        </app-input>
         <div class="input-form__error"></div>  
     </div>
 </div>

@@ -1,4 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, EventEmitter, Output } from "@angular/core";
+
+import { IDataForm } from "src/app/types/types";
 
 import { SelectProps } from "src/shared/select/select.component";
 
@@ -10,4 +12,11 @@ import { SelectProps } from "src/shared/select/select.component";
 export class SelectFormComponent {
     @Input() title!: string
     @Input() items: SelectProps[] = [];
+    @Input() disabled = true;
+    @Input() name!: string;
+    @Output() myEvent = new EventEmitter<any>();
+
+    passEvent(data: IDataForm) {
+      this.myEvent.emit(data);
+    }
 }

@@ -9,6 +9,6 @@ import { InputPasswordComponent } from "./ui/input-password.component";
 @NgModule({
     declarations: [InputPasswordComponent],
     exports: [InputPasswordComponent],
-    imports: [InputModule, HttpClientModule, AngularSvgIconModule.forRoot()],
+    imports: [InputModule, HttpClientModule, AngularSvgIconModule.forRoot()],  
 })
 export class InputPasswordModule {}

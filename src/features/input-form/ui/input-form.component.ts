@@ -1,4 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+
+import { IDataForm } from "src/app/types/types";
 
 @Component({
     selector: 'app-input-form',
@@ -8,4 +10,14 @@ import { Component, Input } from "@angular/core";
 export class InputFormComponent {
     @Input() title!: string;
     @Input() placeholder = '';
+    @Input() value = '';
+    @Input() name!: string;
+    @Input() disabled = false;
+    
+
+    @Output() myEvent = new EventEmitter<any>();
+
+    passEvent(data: IDataForm) {
+      this.myEvent.emit(data);
+    }
 }

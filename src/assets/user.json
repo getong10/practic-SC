@@ -1,0 +1,14 @@
+{
+    "cities": [
+        { "name": "Ярославль", "value": "Yaroslavl" },
+        { "name": "Самара", "value": "Samara" }
+    ],
+    "classSchools": [
+        { "name": "10б", "value": "10b" },
+        { "name": "8а", "value": "8a" }
+    ],
+    "schools": [
+        { "name": "10б", "value": "10b" },
+        { "name": "8а", "value": "8a" }
+    ]
+}

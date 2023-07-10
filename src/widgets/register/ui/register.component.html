@@ -3,36 +3,36 @@
         <div>
             <h3 class="auth-title">Регистрация</h3>
             <div class="register-wrapper__btns-role">
-                <app-button class="register-wrapper__btn-margin" [setBackgroundColor]="'#33FF99'">Я ученик</app-button>
-                <app-button [setBackgroundColor]="'#FF0066'">Я учитель</app-button>
+                <app-button (click)="toggleDisabled('student')" class="register-wrapper__btn-margin" [setBackgroundColor]="'#33FF99'">Я ученик</app-button>
+                <app-button (click)="toggleDisabled('admin')" [setBackgroundColor]="'#FF0066'">Я учитель</app-button>
             </div>
         </div>
-        <app-input-form [title]="'Фамилия'"></app-input-form>
-        <app-input-form [title]="'Имя'"></app-input-form>
-        <app-input-form [title]="'Отчество'"></app-input-form>
-        <app-input-form [title]="'E-mail'" [placeholder]="'primer@email.ru'"></app-input-form>
-        <app-select-form [title]="'Город'" [items]="cities"></app-select-form>
-        <app-select-form [title]="'Школа'" [items]="schools"></app-select-form>
-        <app-select-form [title]="'Класс'" [items]="classSchools"></app-select-form>
-        <app-input-password [title]="'Пароль'"></app-input-password>
-        <app-input-password [title]="'Подтвердите пароль'"></app-input-password>
+        <app-input-form [disabled]="disabledStudent" [name]="'surName'" (myEvent)="handleEvent($event)" [value]="registerBody.surName" [title]="'Фамилия'"></app-input-form>
+        <app-input-form [disabled]="disabledStudent" [name]="'username'" (myEvent)="handleEvent($event)" [value]="registerBody.username" [title]="'Имя'"></app-input-form>
+        <app-input-form [disabled]="disabledStudent" [name]="'patronymic'" (myEvent)="handleEvent($event)" [value]="registerBody.patronymic" [title]="'Отчество'"></app-input-form>
+        <app-input-form [disabled]="disabled" [name]="'email'" (myEvent)="handleEvent($event)" [value]="registerBody.email" [title]="'E-mail'" [placeholder]="'primer@email.ru'"></app-input-form>
+        <app-select-form [disabled]="disabled" [title]="'Город'" [name]="'cities'" (myEvent)="handleEvent($event)" [items]="cities"></app-select-form>
+        <app-select-form [disabled]="disabled" [title]="'Школа'" [name]="'schools'" (myEvent)="handleEvent($event)" [items]="schools"></app-select-form>
+        <app-select-form [disabled]="disabled" [title]="'Класс'" [name]="'classSchools'" (myEvent)="handleEvent($event)" [items]="classSchools"></app-select-form>
+        <app-input-password [disabled]="disabledStudent" (myEvent)="handleEvent($event)" [value]="registerBody.password" [name]="'password'" [title]="'Пароль'"></app-input-password>
+        <app-input-password [disabled]="disabledStudent" (myEvent)="handleEvent($event)" [value]="registerBody.repeatPassword" [name]="'repeatPassword'" [title]="'Подтвердите пароль'"></app-input-password>
         <div class="register-wrapper__new-info-wrapper">
             <div class="register-wrapper__new-info">
                 <div class="register-wrapper__line"></div>
                 <div class="register-wrapper__wrapper-checkbox">
-                    <app-input class="register-wrapper__checkbox-info" [type]="'checkbox'" [id]="'info-input'"></app-input>
+                    <app-input (myEvent)="handleEvent($event)" [disabled]="disabledStudent" [name]="'getNews'" [checked]="registerBody.getNews" class="register-wrapper__checkbox-info" [type]="'checkbox'" [id]="'info-input'"></app-input>
                     <label for="info-input" class="register-wrapper__text-info">Я хочу получать новости о соревнованиях на телефон</label>
                 </div>
             </div>
             <div>
-                <app-button class="register-wrapper__btn-margin" [setBackgroundColor]="'#585858'">Обратиться в тех. поддержку</app-button>
-                <app-button>Зарегистрироваться</app-button>
+                <app-button (click)="openSupportModal()" class="register-wrapper__btn-margin" [setBackgroundColor]="'#585858'">Обратиться в тех. поддержку</app-button>
+                <app-button (click)="sendRegister()">Зарегистрироваться</app-button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- <app-modal>
+<app-modal *ngIf="registerStatus">
     <h3 class="register-title">Спасибо за заявку!</h3>
     <div class="modal-description">
         В ближайшее время заявка будет рассмотрена администратором.
@@ -40,5 +40,11 @@
     <div class="modal-description">
         После одобрения вы получите письмо на вашу эл.почту с приглашением на портал.
     </div>
-    <app-button>ОК</app-button>
-</app-modal> -->
+    <app-button (click)="closeModal()">ОК</app-button>
+</app-modal>
+
+<app-modal *ngIf="techSupport">
+    <h3 class="register-title">Укажите ваши пожелания</h3>
+    <textarea rows="10" [(ngModel)]="supportMessage"></textarea>
+    <app-button (click)="closeSupportModal()">Отправить</app-button>
+</app-modal>

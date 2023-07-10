@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'users',
     loadChildren: () => import('../pages/users-page/users-page.module').then(comp => comp.UsersPageModule)
-  }
+  },
+  {
+    path: 'upcoming',
+    loadChildren: () => import('../pages/upcoming-tourneys/upcoming-tourneys-page.module').then(comp => comp.UpcomingTourneysPageModule)
+  },
 ];
 
 @NgModule({
