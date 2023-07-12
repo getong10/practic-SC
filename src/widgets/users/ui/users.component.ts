@@ -29,7 +29,6 @@ export class UsersComponent implements OnInit {
     ngOnInit(): void {
         this.usersService.getUsersData().subscribe(response => {
             this.usersData = response;
-            this.usersData.filterTourneys = [{ name: 'Фильтрация по турнирам', value: '' }].concat(this.usersData.filterTourneys);
         })
     }
 }

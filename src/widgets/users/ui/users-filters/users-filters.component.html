@@ -1,9 +1,44 @@
 <div class="users-filters">
     <div class="users-filters__sort-wrapper">
         <label for="sortBy">Сортировка по:</label>
+        <mat-form-field>
+            <mat-label>Пользователям</mat-label>
+
+            <mat-select 
+              [(ngModel)]="selectedUserFilter"
+              (ngModelChange)="sortByUsersFilters()">
+
+                <mat-option>None</mat-option>
+              <mat-option 
+                *ngFor="let filter of filters"
+                [value]="filter.name"
+                >{{filter.name}}</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+    </div>
+
+    <mat-form-field>
+        <mat-label>Турнирам</mat-label>
+        <mat-select
+        [(ngModel)]="selectedTourneyFilter"
+        (ngModelChange)="sortByTourneyFilters()">
+
+          <mat-option>None</mat-option>
+          <mat-option 
+            *ngFor="let filter of filterTourneys"
+            [value]="filter.name"
+            >{{filter.name}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+</div>
+<!-- <div class="users-filters">
+    <div class="users-filters__sort-wrapper">
+        <label for="sortBy">Сортировка по:</label>
         <app-select [items]="filters" formControlName="sort" name="" id="sortBy">
         </app-select>
     </div>
     <app-select [items]="filterTourneys" name="" id="" formControlName="tourneyFilter">
     </app-select>
-</div>
+</div> -->

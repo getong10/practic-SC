@@ -6,6 +6,7 @@ import { Component } from "@angular/core";
     styleUrls: ['./users-header.component.scss'],
 })
 export class UsersHeaderComponent {
+
     isSearch = true;
     isSearchBtn = true;
     viewModal = false;
@@ -17,4 +18,5 @@ export class UsersHeaderComponent {
     closeModal() {
         this.viewModal = false;
     }
+
 }
